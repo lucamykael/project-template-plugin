@@ -1,0 +1,16 @@
+<idea-plugin>
+    <id>com.dev.projectTemplate</id>
+    <name>Project Template MK</name>
+    <vendor>Lucas Mykael</vendor>
+    <version>1.0.0</version>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <moduleType implementationClass="com.dev.generator.MyModuleType"/>
+        <moduleBuilder
+                id="my-spring-template"
+                name="Spring Boot Maven Template"
+                description="Cria um projeto Spring Boot com Maven, Lombok e JPA"
+                class="com.dev.generator.MyProjectModuleBuilder"
+                icon="/icons/spring-icon.svg" />
+    </extensions>
+</idea-plugin>
