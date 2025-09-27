@@ -18,6 +18,7 @@ public class MyProjectModuleBuilder extends ModuleBuilder {
     private String selectedDb;
     private String titleInserted;
     private JComboBox<String> dbCombo;
+    private JCheckBox check;
     private JTextField titleField;
 
     @Override
@@ -396,10 +397,11 @@ public class MyProjectModuleBuilder extends ModuleBuilder {
     public ModuleWizardStep modifySettingsStep(@NotNull SettingsStep settingsStep) {
         dbCombo = new JComboBox<>(new String[]{"H2", "PostgreSQL", "MySQL", "Oracle"});
         titleField = new JTextField();
+        check = new JCheckBox();
 
-        // Aqui você integra com a tela padrão do IntelliJ
-        settingsStep.addSettingsField("Project Title:", titleField);
+        settingsStep.addSettingsField("Project title:", titleField);
         settingsStep.addSettingsField("Database:", dbCombo);
+        settingsStep.addSettingsField("Code samples:", check);
         return new ModuleWizardStep() {
             @Override
             public JComponent getComponent() {
