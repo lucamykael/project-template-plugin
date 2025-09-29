@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.dev"
-version = "1.0.2"
+version = "1.0.3"
 
 repositories {
     mavenCentral()
@@ -16,14 +16,14 @@ java {
 }
 
 intellij {
-    version.set("2025.2.2") // ou a versão do IntelliJ que você usa
-    type.set("IC")        // IC = Community, IU = Ultimate
+    version.set("2022.2.2")
+    type.set("IC")
     plugins.set(listOf("java"))
 }
 
 tasks {
     patchPluginXml {
-        sinceBuild.set("252")
+        sinceBuild.set("222")
         untilBuild.set("252.*")
     }
 
