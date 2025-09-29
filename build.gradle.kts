@@ -16,14 +16,14 @@ java {
 }
 
 intellij {
-    version.set("2025.2.2")
+    version.set("2022.2.2")
     type.set("IC")
     plugins.set(listOf("java"))
 }
 
 tasks {
     patchPluginXml {
-        sinceBuild.set("222.*")
+        sinceBuild.set("222")
         untilBuild.set("252.*")
     }
 

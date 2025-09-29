@@ -2,7 +2,7 @@
     <id>com.dev.projectTemplate</id>
     <name>Project Template MK</name>
     <vendor>Lucas Mykael</vendor>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
     <description>
         Project template using layered architecture and Domain Design Development, design pattern in folders. In pom.xml, using lombok, mapstruct and database packages.
