@@ -16,7 +16,6 @@ public class MyConfigurable implements Configurable {
     private JPanel panel;
     private Disposable uiDisposable;
 
-    // Recebe o projeto automaticamente se for ProjectConfigurable
     public MyConfigurable(Project project) {
         this.project = project;
     }
@@ -26,12 +25,8 @@ public class MyConfigurable implements Configurable {
         panel = new JPanel();
         uiDisposable = Disposer.newDisposable("MyConfigurableUI");
 
-        // Exemplo: pegar editor existente do projeto (não liberar!)
         Editor editor = FileEditorManager.getInstance(project).getSelectedTextEditor();
 
-        // Se precisar usar recursos descartáveis, registre aqui
-        // Mas nunca chame releaseEditor no editor que veio do IDE
-        // Exemplo de disposable custom:
         Disposable child = () -> System.out.println("Disposed child!");
         Disposer.register(uiDisposable, child);
 
@@ -45,7 +40,6 @@ public class MyConfigurable implements Configurable {
 
     @Override
     public void apply() throws ConfigurationException {
-        // aplicar alterações se houver
     }
 
     @Override

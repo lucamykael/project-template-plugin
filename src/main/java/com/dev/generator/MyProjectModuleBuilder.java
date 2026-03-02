@@ -34,7 +34,6 @@ public class MyProjectModuleBuilder extends ModuleBuilder {
 
         if (root != null) {
             try {
-                // Estrutura Maven
                 VirtualFile src = root.createChildDirectory(this, "src");
                 VirtualFile main = src.createChildDirectory(this, "main");
                 VirtualFile mainJava = main.createChildDirectory(this, "java");
@@ -50,14 +49,11 @@ public class MyProjectModuleBuilder extends ModuleBuilder {
                         .createChildDirectory(this, "dev")
                         .createChildDirectory(this, packageName);
 
-                // pom.xml
                 String pom = generatePomXml(db, packageName);
                 createFile(root, "pom.xml", pom);
 
-                // README
                 createFile(root, "README.md", "# Projeto Spring Boot com Lombok e JPA 🚀");
 
-                // application.properties
                 createFile(mainResources, "application.properties",
                         "spring.application.name=" + title + "\nspring.datasource.url=jdbc:h2:mem:testdb\nspring.jpa.hibernate.ddl-auto=update");
 
@@ -141,7 +137,6 @@ public class MyProjectModuleBuilder extends ModuleBuilder {
 
                 createFile(specifications, "BaseSpecification.java", baseSpecification);
 
-                // Teste
                 String testJavaCode = """
                         package com.dev.%s;
                         
