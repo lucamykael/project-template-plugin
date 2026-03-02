@@ -2,7 +2,7 @@
     <id>com.dev.projectTemplate</id>
     <name>Project Template MK</name>
     <vendor>Lucas Mykael</vendor>
-    <version>1.0.3</version>
+    <version>1.1.3</version>
 
     <description>
         Project template using layered architecture and Domain Design Development, design pattern in folders. In pom.xml, using lombok, mapstruct and database packages.
@@ -10,14 +10,17 @@
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.idea.maven</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <moduleType implementationClass="com.dev.generator.MyModuleType"/>
+        <moduleType
+                id="MY_SPRING_TEMPLATE"
+                implementationClass="com.dev.generator.module.ProjectModuleType"/>
         <moduleBuilder
                 id="my-spring-template"
                 name="Spring Boot Maven Template"
                 description="Project template using layered architecture and Domain Design Development, design pattern in folders. In pom.xml, using lombok, mapstruct and database packages."
-                class="com.dev.generator.MyProjectModuleBuilder"
+                builderClass="com.dev.generator.module.ProjectModuleBuilder"
                 icon="/icons/spring-icon.svg" />
         <projectConfigurable
                 instance="com.dev.generator.MyConfigurable"

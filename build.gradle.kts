@@ -18,7 +18,15 @@ java {
 intellij {
     version.set("2022.2.2")
     type.set("IC")
-    plugins.set(listOf("java"))
+    plugins.set(listOf("java", "maven"))
+}
+
+dependencies {
+    implementation("org.eclipse.jgit:org.eclipse.jgit:6.9.0.202403050737-r"){
+        exclude(group = "org.slf4j")
+    }
+
+    implementation("commons-io:commons-io:2.15.1")
 }
 
 tasks {
@@ -29,6 +37,7 @@ tasks {
 
     runIde {
         autoReloadPlugins.set(false)
+        jvmArgs("-Didea.package.search.enabled=false")
     }
 
     publishPlugin {
